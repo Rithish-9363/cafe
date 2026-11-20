@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew & Bliss — Slow Mornings. Beautifully Brewed.</title>
+  <meta name="description" content="Brew & Bliss is a cozy coffee shop dedicated to slow mornings and beautifully brewed coffee. Explore our menu, visit us, or order your favourite cup today." />
+  <meta name="theme-color" content="#76563E" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" aria-label="Brew & Bliss Home">
+        <span class="logo-icon">☕</span>
+        <span class="logo-text">Brew <em>&amp;</em> Bliss</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home" class="nav-link active" data-section="home">Home</a>
+        <a href="#menu" class="nav-link" data-section="menu">Menu</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
+        <a href="#gallery" class="nav-link" data-section="gallery">Gallery</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-search-btn" id="searchToggleBtn" aria-label="Toggle search" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <button class="nav-cart-btn" id="cartToggleBtn" aria-label="Open cart" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge" aria-live="polite">0</span>
+        </button>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="nav-search-bar" id="navSearchBar" role="search" aria-hidden="true">
+      <div class="nav-container">
+        <input type="search" id="globalSearchInput" placeholder="Search our menu…" aria-label="Search menu items" autocomplete="off" />
+        <button class="btn-close-search" id="closeSearchBtn" aria-label="Close search">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home" aria-label="Hero section">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=80&auto=format&fit=crop" alt="Beautiful latte art on a wooden table" class="hero-img" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Your Favourite Corner Awaits</p>
+      <h1 class="hero-headline">
+        Coffee is a little<br/>
+        ritual. <em>Make it</em><br/>
+        <em>beautiful.</em>
+      </h1>
+      <p class="hero-sub">Thoughtfully sourced beans, slowly crafted drinks and a cosy corner where every cup feels like coming home. We pour the craft, you savour the bliss.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+        <a href="#about" class="btn btn-outline-light">Discover Our Story</a>
+      </div>
+    </div>
+
+    <!-- Hero side card -->
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80&auto=format&fit=crop" alt="Espresso shot close-up" class="hero-card-img" loading="lazy" />
+      <div class="hero-card-body">
+        <p class="hero-card-label">Featured Today</p>
+        <p class="hero-card-name">Signature Espresso Blend</p>
+        <p class="hero-card-price">From ₹180</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BANNER ===== -->
+  <section class="stats-banner" aria-label="Quick stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+          <div>
+            <strong>Single-Origin Beans</strong>
+            <span>Ethically sourced from 12+ farms</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
+          <div>
+            <strong>Organic Oat Milk</strong>
+            <span>Always fresh, always creamy</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div>
+            <strong>Zero Fuss</strong>
+            <span>Simple ordering, speedy service</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR MENU ===== -->
+  <section class="section menu-section" id="menu" aria-label="Coffee menu">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Menu</p>
+        <h2 class="section-title">Made to Make Your Day.</h2>
+        <p class="section-desc">Handcrafted beverages from single-origin beans to beloved classics.</p>
+      </div>
+
+      <!-- Search + Filters -->
+      <div class="menu-controls">
+        <div class="menu-search-wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="menuSearchInput" placeholder="Search drinks…" aria-label="Search menu" autocomplete="off" />
+        </div>
+        <div class="menu-filters" role="tablist" aria-label="Menu categories">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="hot" role="tab" aria-selected="false">Hot Coffee</button>
+          <button class="filter-btn" data-filter="cold" role="tab" aria-selected="false">Cold Coffee</button>
+          <button class="filter-btn" data-filter="special" role="tab" aria-selected="false">Special Drinks</button>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menuGrid" aria-live="polite">
+        <!-- Cards injected by menu.js -->
+      </div>
+
+      <!-- Empty state -->
+      <div class="menu-empty" id="menuEmpty" hidden aria-live="polite">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#89917D" stroke-width="1.5"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/></svg>
+        <p>No drinks found. Try a different search or category.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about-section" id="about" aria-label="About Brew and Bliss">
+    <div class="container about-grid">
+      <div class="about-image-col">
+        <div class="about-img-main-wrap">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80&auto=format&fit=crop" alt="Cosy interior of Brew and Bliss cafe with warm lighting" class="about-img-main" loading="lazy" />
+        </div>
+        <div class="about-img-accent-wrap">
+          <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6?w=400&q=80&auto=format&fit=crop" alt="Barista carefully pouring a latte" class="about-img-accent" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="about-content-col">
+        <p class="section-eyebrow">About Us</p>
+        <h2 class="section-title">Good coffee. Good<br/>company. Good<br/>moments.</h2>
+        <p class="about-lead">Every cup we craft carries a story — of farmers who tend the land with care, of baristas who train for years, and of guests who deserve only the finest.</p>
+        <p class="about-body">From the first pour at dawn to the last espresso of the evening, Brew &amp; Bliss is a place where time slows down and every sip matters. We believe that great coffee is not just a drink — it is a ritual, a pause, a small act of self-care in a busy world.</p>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <strong>500+</strong><span>Happy Guests Daily</span>
+          </div>
+          <div class="about-stat">
+            <strong>7</strong><span>Years of Craft</span>
+          </div>
+          <div class="about-stat">
+            <strong>18</strong><span>Signature Blends</span>
+          </div>
+        </div>
+
+        <a href="#menu" class="btn btn-primary mt-4">Explore Our Menu →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="section why-section" aria-label="Why choose Brew and Bliss">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Our Promise</p>
+        <h2 class="section-title">Not Just Coffee. A Feeling.</h2>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Carefully Sourced</h3>
+          <p>We work directly with small-batch, ethical farms across South America and East Africa to bring you beans bursting with character and flavour.</p>
+          <a href="#about" class="why-link">Learn more →</a>
+        </article>
+
+        <article class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+          </div>
+          <h3>Craft With Full Care</h3>
+          <p>Our baristas undergo months of rigorous training in extraction, texture and latte art, ensuring every cup that leaves our counter is a small masterpiece.</p>
+          <a href="#menu" class="why-link">View our menu →</a>
+        </article>
+
+        <article class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Made For You Always</h3>
+          <p>Whether it is a quick espresso on the go or a lazy afternoon pour-over, our space and menu are thoughtfully designed to fit your rhythm and lifestyle.</p>
+          <a href="#contact" class="why-link">Visit us →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="section gallery-section" id="gallery" aria-label="Cafe photo gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Gallery</p>
+        <h2 class="section-title">Moments Captured in Stillness.</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gi-large">
+          <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80&auto=format&fit=crop" alt="Cozy cafe interior with people enjoying coffee" loading="lazy" />
+          <div class="gallery-overlay"><span>Inside the Bliss</span></div>
+        </div>
+        <div class="gallery-item gi-tall">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop" alt="Barista crafting latte art" loading="lazy" />
+          <div class="gallery-overlay"><span>The Art of Pouring</span></div>
+        </div>
+        <div class="gallery-item gi-small">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80&auto=format&fit=crop" alt="Beautiful latte with foam art" loading="lazy" />
+          <div class="gallery-overlay"><span>Latte Artistry</span></div>
+        </div>
+        <div class="gallery-item gi-small">
+          <img src="https://images.unsplash.com/photo-1534687941688-651ccaafbff8?w=600&q=80&auto=format&fit=crop" alt="Fresh pastries on counter" loading="lazy" />
+          <div class="gallery-overlay"><span>Fresh Bakes</span></div>
+        </div>
+        <div class="gallery-item gi-wide">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=80&auto=format&fit=crop" alt="Overhead shot of coffee cups and notebooks" loading="lazy" />
+          <div class="gallery-overlay"><span>Slow Morning Ritual</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials-section" aria-label="Customer testimonials">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Customer Reviews</p>
+        <h2 class="section-title">A Few Kind Words.</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"This place feels like a warm hug every morning. The oat milk latte is absolutely divine, and the staff remember my order every single day."</blockquote>
+          <footer class="testimonial-author">
+            <img src="https://i.pravatar.cc/48?img=47" alt="Priya S." class="author-avatar" loading="lazy" />
+            <div>
+              <strong>Priya S.</strong>
+              <span>Regular Guest</span>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"I've tried every coffee shop in the city but nothing comes close. The pour-over alone is worth the trip. I come here every weekend without fail."</blockquote>
+          <footer class="testimonial-author">
+            <img src="https://i.pravatar.cc/48?img=12" alt="Rahul M." class="author-avatar" loading="lazy" />
+            <div>
+              <strong>Rahul M.</strong>
+              <span>Coffee Enthusiast</span>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"It's the best local spot hands down. The ambience is so calming that I end up staying for hours. Five stars, every single time, without exception."</blockquote>
+          <footer class="testimonial-author">
+            <img src="https://i.pravatar.cc/48?img=32" alt="Aisha K." class="author-avatar" loading="lazy" />
+            <div>
+              <strong>Aisha K.</strong>
+              <span>Food Blogger</span>
+            </div>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISIT US ===== -->
+  <section class="section visit-section" id="contact" aria-label="Visit our cafe">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">Your Cosy Corner Awaits.</h2>
+        <p class="section-desc">We are always delighted to have you. Here is where to find us.</p>
+      </div>
+
+      <div class="visit-grid">
+        <div class="visit-info">
+          <div class="visit-info-block">
+            <div class="visit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>Our Address</strong>
+              <span>42 Bliss Lane, Koramangala<br/>Bengaluru, Karnataka 560034</span>
+            </div>
+          </div>
+
+          <div class="visit-info-block">
+            <div class="visit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong>Opening Hours</strong>
+              <span>Mon – Fri: 7:00 AM – 9:00 PM<br/>Sat – Sun: 8:00 AM – 10:00 PM</span>
+            </div>
+          </div>
+
+          <div class="visit-info-block">
+            <div class="visit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.11 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Contact Us</strong>
+              <span>+91 98765 43210<br/>hello@brewandbliss.in</span>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form" id="contactForm" novalidate aria-label="Send us a message">
+            <h3 class="form-title">Send Us a Message</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Full Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="contactName" name="name" placeholder="Your full name" required autocomplete="name" />
+                <span class="form-error" id="nameError" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required autocomplete="email" />
+                <span class="form-error" id="emailError" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject">Subject <span aria-hidden="true">*</span></label>
+              <input type="text" id="contactSubject" name="subject" placeholder="How can we help?" required />
+              <span class="form-error" id="subjectError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Message <span aria-hidden="true">*</span></label>
+              <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us anything…" required></textarea>
+              <span class="form-error" id="messageError" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loader" hidden>Sending…</span>
+            </button>
+
+            <div class="form-success" id="contactSuccess" hidden role="status">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Message sent!</strong> We'll get back to you within 24 hours.
+            </div>
+          </form>
+        </div>
+
+        <!-- Map -->
+        <div class="visit-map">
+          <iframe
+            title="Brew and Bliss location on Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5979577726!2d77.6220!3d12.9279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzQwLjQiTiA3N8KwMzcnMTkuMiJF!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-cta-row">
+            <a href="https://maps.google.com/?q=Koramangala+Bengaluru" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+            <a href="tel:+919876543210" class="btn btn-primary">Reserve a Table</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo" aria-label="Brew & Bliss Home">
+          <span class="logo-icon">☕</span>
+          <span class="logo-text">Brew <em>&amp;</em> Bliss</span>
+        </a>
+        <p class="footer-tagline">Slow Mornings. Beautifully Brewed.</p>
+        <p class="footer-about">A cosy coffee haven tucked in the heart of the city — where every cup tells a story and every visit feels like home.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Follow Brew & Bliss on Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Follow Brew & Bliss on Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Follow Brew & Bliss on Twitter" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-hours">
+        <h4>Opening Hours</h4>
+        <ul>
+          <li><span>Monday – Friday</span><span>7 AM – 9 PM</span></li>
+          <li><span>Saturday</span><span>8 AM – 10 PM</span></li>
+          <li><span>Sunday</span><span>8 AM – 10 PM</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Stay in the Loop</h4>
+        <p>Get weekly brew tips, seasonal specials and café news delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm" novalidate aria-label="Newsletter signup">
+          <div class="newsletter-input-wrap">
+            <input type="email" id="newsletterEmail" placeholder="Your email address" required aria-label="Email address for newsletter" autocomplete="email" />
+            <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
+          </div>
+          <span class="form-error" id="newsletterError" role="alert"></span>
+          <div class="form-success" id="newsletterSuccess" hidden role="status">🎉 You're subscribed! Welcome to the Bliss family.</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Brew &amp; Bliss. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SHOPPING CART DRAWER ===== -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true" role="dialog">
+    <div class="cart-header">
+      <h2>Your Order</h2>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-body" id="cartBody">
+      <!-- Cart items injected by cart.js -->
+    </div>
+
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="cart-totals">
+        <div class="cart-total-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+        <div class="cart-total-row"><span>Tax (5%)</span><span id="cartTax">₹0</span></div>
+        <div class="cart-total-row cart-total-final"><span>Total</span><span id="cartTotal">₹0</span></div>
+      </div>
+      <button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout</button>
+      <p class="cart-note">* Checkout is for demonstration. No real payment is processed.</p>
+    </div>
+  </aside>
+
+  <!-- Cart Overlay -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Scripts -->
+  <script src="js/cart.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
